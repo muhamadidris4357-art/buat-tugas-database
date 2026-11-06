@@ -140,7 +140,7 @@ export function generateId(prefix: string = 'id'): string {
  * Debounce function for search inputs.
  */
 export function debounce<T extends (...args: any[]) => void>(func: T, wait: number): T {
-  let timeout: NodeJS.Timeout | null = null;
+  let timeout: ReturnType<typeof setTimeout> | null = null;
   return ((...args: any[]) => {
     if (timeout) clearTimeout(timeout);
     timeout = setTimeout(() => func(...args), wait);

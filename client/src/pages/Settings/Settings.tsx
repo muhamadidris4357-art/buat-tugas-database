@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ShieldAlert, Building2 } from 'lucide-react';
+import { ShieldAlert, Building2, Lock } from 'lucide-react';
 import { useAuth } from '@/contexts/AuthContext';
 import Card from '@/components/common/Card';
 import Button from '@/components/common/Button';
@@ -11,7 +11,7 @@ export default function Settings() {
   const tabs = [
     { id: 'general', label: 'Umum', icon: ShieldAlert },
     { id: 'company', label: 'Perusahaan', icon: Building2 },
-    { id: 'security', label: 'Keamanan', icon: LockKey },
+    { id: 'security', label: 'Keamanan', icon: Lock },
   ];
 
   return (

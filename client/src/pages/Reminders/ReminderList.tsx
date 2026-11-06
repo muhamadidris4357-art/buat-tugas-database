@@ -6,6 +6,7 @@ import { useAuth } from '@/contexts/AuthContext';
 import { formatDate } from '@/lib/utils';
 import Badge from '@/components/common/Badge';
 import Card from '@/components/common/Card';
+import Button from '@/components/common/Button';
 
 export default function ReminderList() {
   const { user } = useAuth();

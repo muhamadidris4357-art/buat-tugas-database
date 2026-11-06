@@ -112,7 +112,7 @@ export default function CompanyDetail() {
               <span className="flex-1 px-3 py-2 rounded-lg bg-gray-900 border border-gray-600 text-sm text-gray-300 font-mono truncate">
                 {company.code}
               </span>
-              <Button variant="outline" size="sm" onClick={() => changeCode()}>
+              <Button variant="secondary" size="sm" onClick={() => changeCode()}>
                 Ubah Kode
               </Button>
             </div>

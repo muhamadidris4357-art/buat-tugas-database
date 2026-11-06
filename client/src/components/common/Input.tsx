@@ -25,11 +25,11 @@ const Input = forwardRef<HTMLInputElement | HTMLTextAreaElement, InputProps>(
             id={inputId}
             rows={rows}
             className={cn(baseClass, error && 'border-red-500 focus:ring-red-500 focus:border-red-500', className)}
-            {...props}
+            {...props as any}
           />
         ) : (
           <input
-            ref={ref}
+            ref={ref as any}
             id={inputId}
             className={cn(baseClass, error && 'border-red-500 focus:ring-red-500 focus:border-red-500', className)}
             {...props}
