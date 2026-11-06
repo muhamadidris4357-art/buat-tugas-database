@@ -1,9 +1,11 @@
-import { createContext, useContext, useState, useEffect, useCallback, ReactNode } from 'react';
+import { createContext, useCallback, useContext, useEffect, useState } from 'react';
+import type { ReactNode } from 'react';
 import api from '@/lib/api';
 import type { User, Company, AuthState, Role } from '@/types';
 
-const AuthContext = createContext<{
+type AuthContextType = {
   state: AuthState;
+  user: User | null;
   login: (email: string, password: string) => Promise<{ success: boolean; error?: string }>;
   registerCompany: (data: {
     companyName: string;
@@ -28,7 +30,9 @@ const AuthContext = createContext<{
   isPlatformOwner: () => boolean;
   isCompanyAdmin: () => boolean;
   isEmployee: () => boolean;
-}> | undefined(undefined);
+};
+
+const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [state, setState] = useState<AuthState>({

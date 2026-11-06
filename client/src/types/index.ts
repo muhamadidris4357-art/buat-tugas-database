@@ -133,6 +133,7 @@ export interface AuthState {
   company: Company | null;
   isAuthenticated: boolean;
   isLoading: boolean;
+  unreadCount?: number;
 }
 
 export interface PaginationMeta {
